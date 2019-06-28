@@ -1,7 +1,8 @@
-const btnIncre = document.getElementById("btn_increment");
-const btnDecre = document.getElementById("btn_decrement");
-const btnReset = document.getElementById("btn_reset");
+const btnIncre = document.querySelector("#btn_increment");
+const btnDecre = document.querySelector("#btn_decrement");
+const btnReset = document.querySelector("#btn_reset");
 const countArea = document.querySelector(".count");
+const inputNum = document.querySelector("#input_num");
 
 // START
 function Counter() {
@@ -9,11 +10,11 @@ function Counter() {
 }
 
 Counter.prototype.increment = function() {
-  this.count = this.count + 1;
+  inputNum.value ? this.count = this.count + Number(inputNum.value) : this.count = this.count + 1
 };
 
 Counter.prototype.decrement = function() {
-  this.count = this.count - 1;
+  inputNum.value ? this.count = this.count - Number(inputNum.value) : this.count = this.count - 1
 };
 
 Counter.prototype.reset = function() {
@@ -21,7 +22,7 @@ Counter.prototype.reset = function() {
 };
 
 Counter.prototype.getCount = function() {
-  return this.count;
+  return this.count
 };
 
 const CounterApp = new Counter();

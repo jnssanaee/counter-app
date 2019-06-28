@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>counter app</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
   <div id="app">
-    <button type="button" id="btn_increment">+</button>
-    <button type="button" id="btn_decrement">-</button>
-    <button type="button" id="btn_reset">reset</button>
-    <span class="count"></span>
+    <div class="count"></div>
+    <input class="form-control" type="text" id="input_num" placeholder="Enter number">
+    <button type="button" class="btn btn-primary" id="btn_increment" title="plus">+</button>
+    <button type="button" class="btn btn-danger" id="btn_decrement" title="minus">-</button>
+    <button type="button" class="btn btn-outline-secondary" id="btn_reset">reset</button>
   </div>
 
   <script src="./app.js"></script>
