@@ -10,10 +10,12 @@ function Counter() {
 }
 
 Counter.prototype.increment = function() {
+  if(isNaN(inputNum.value)) return alert('숫자만 입력해주시기 바랍니다')
   inputNum.value ? this.count = this.count + Number(inputNum.value) : this.count = this.count + 1
 };
 
 Counter.prototype.decrement = function() {
+  if(isNaN(inputNum.value)) return alert('숫자만 입력해주시기 바랍니다')
   inputNum.value ? this.count = this.count - Number(inputNum.value) : this.count = this.count - 1
 };
 
@@ -58,4 +60,5 @@ const init = function() {
 
 window.onload = function() {
   init();
+
 };
