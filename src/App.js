@@ -6,11 +6,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       count: 0,
+      inputValue: null,
     };
   }
 
-  increment = () => this.setState({ count: this.state.count + 1 });
-  decrement = () => this.setState({ count: this.state.count - 1 });
+  increment = () => {
+    this.setState(({ count }) => ({
+      // count: this.state.count + 1 과 선언 시 'this.state'를 또 조회한다.
+      count: count + 1,
+    }));
+  };
+  decrement = () => {
+    this.setState(({ count }) => ({
+      count: count - 1,
+    }));
+  };
   reset = () => this.setState({ count: 0 });
 
   render() {
