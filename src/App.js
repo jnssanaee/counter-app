@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { CounterView, BtnGroup } from "./components/index";
 import './App.css';
 
 class App extends React.Component {
@@ -8,22 +9,28 @@ class App extends React.Component {
       count: 0,
       number: ''
     };
+    this.increment = this.increment.bind(this);
+    this.decrement = this.decrement.bind(this);
+    this.reset = this.reset.bind(this);
   }
 
   increment = () => {
     this.setState(({ count }) => ({ // count: this.state.count + 1 과 선언 시 'this.state'를 또 조회한다.
-    //count: count - 1,  
-    count: count + this.state.number, 
+      //count: count + 1,  
+      count: this.state.number ? count + this.state.number : count + 1
     }));
   };
+
   decrement = () => {
     this.setState(({ count }) => ({
-      count: count - 1,
+      count: this.state.number ? count - this.state.number : count - 1
     }));
   };
+
   reset = () => this.setState({ count: 0 });
 
   handleChange = (e) => {
+    if (isNaN(e.target.value)) return alert('숫자만 입력해주시기 바랍니다')
     this.setState({
       number: parseInt(e.target.value)
     })
@@ -32,19 +39,9 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="count">{this.state.count}</div>
+        <CounterView data={this.state.count} />
         <input className="form-control" type="text" id="input_num" value={this.state.number} onChange={this.handleChange} placeholder="Enter number" />
-        <div>
-          <button type="button" className="btn btn-primary" onClick={this.increment} title="plus">
-            +
-          </button>
-          <button type="button" className="btn btn-danger" onClick={this.decrement} title="minus">
-            -
-          </button>
-          <button type="button" className="btn btn-outline-secondary" onClick={this.reset}>
-            reset
-          </button>
-        </div>
+        <BtnGroup increment={this.increment} decrement={this.decrement} reset={this.reset} />
       </div>
     );
   }
