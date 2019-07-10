@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class BtnGroup extends React.Component {
+class BtnGroup extends Component {
 
     render() {
         return (

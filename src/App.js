@@ -1,22 +1,18 @@
 import React, { Component } from 'react';
-import { CounterView, BtnGroup } from "./components/index";
+import { CounterView, BtnGroup, InputNum } from "./components/index";
 import './App.css';
 
-class App extends React.Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       count: 0,
       number: ''
     };
-    this.increment = this.increment.bind(this);
-    this.decrement = this.decrement.bind(this);
-    this.reset = this.reset.bind(this);
   }
 
   increment = () => {
     this.setState(({ count }) => ({ // count: this.state.count + 1 과 선언 시 'this.state'를 또 조회한다.
-      //count: count + 1,  
       count: this.state.number ? count + this.state.number : count + 1
     }));
   };
@@ -40,7 +36,7 @@ class App extends React.Component {
     return (
       <div>
         <CounterView data={this.state.count} />
-        <input className="form-control" type="text" id="input_num" value={this.state.number} onChange={this.handleChange} placeholder="Enter number" />
+        <InputNum data={this.state.number} onChange={this.handleChange} />
         <BtnGroup increment={this.increment} decrement={this.decrement} reset={this.reset} />
       </div>
     );
