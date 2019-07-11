@@ -33,10 +33,11 @@ class App extends Component {
   }
 
   render() {
+    const thisState = this.state;
     return (
       <div>
-        <CounterView data={this.state.count} />
-        <InputNum data={this.state.number} onChange={this.handleChange} />
+        <CounterView data={thisState.count} />
+        <InputNum data={thisState.number} onChange={this.handleChange} />
         <BtnGroup increment={this.increment} decrement={this.decrement} reset={this.reset} />
       </div>
     );

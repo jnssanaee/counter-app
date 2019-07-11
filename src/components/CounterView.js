@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 
 class CounterView extends Component {
     render() {
+        const thisProps = this.props;
         return(
-            <div className="count">{this.props.data}</div>
+            <div className="count">{thisProps.data}</div>
         )
     }
 }
