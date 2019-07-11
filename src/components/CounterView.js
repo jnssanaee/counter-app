@@ -1,10 +1,10 @@
 import React from 'react';
 
-function CounterView(props) {
+function CounterView({ count }) {
     return (
         <div 
             className="count">
-            { props.data }
+            { count }
         </div>
     )
 }

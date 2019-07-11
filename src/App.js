@@ -25,10 +25,11 @@ class App extends Component {
 
   reset = () => this.setState({ count: 0 });
 
-  handleChange = (e) => {
-    if (isNaN(e.target.value)) return alert('숫자만 입력해주시기 바랍니다')
+  handleChange = ({ target }) => {
+    const diffValue = target.value;
+    if (isNaN(diffValue)) return alert('숫자만 입력해주시기 바랍니다')
     this.setState({
-      number: parseInt(e.target.value)
+      number: parseInt(diffValue)
     })
   }
 
@@ -36,8 +37,8 @@ class App extends Component {
     const { count, number } = this.state;
     return (
       <div>
-        <CounterView data={count} />
-        <InputNum data={number} onChange={this.handleChange} />
+        <CounterView count={count} />
+        <InputNum number={number} onChange={this.handleChange} />
         <BtnGroup increment={this.increment} decrement={this.decrement} reset={this.reset} />
       </div>
     );

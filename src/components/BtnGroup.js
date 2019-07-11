@@ -1,12 +1,22 @@
 import React from 'react';
 
-function BtnGroup(props) {
+function BtnGroup({increment, decrement, reset}) {
+    const btnJson = [
+        { txt: '+', class: 'btn-primary', onclick: 'increment', title: 'plus' },
+        { txt: '-', class: 'btn-danger', onclick: 'decrement', title: 'minus' },
+        { txt: 'reset', class: 'btn-outline-secondary', onclick: 'reset', title: '' },
+    ]
+    const btnList = btnJson.map((element, index) => {
+        (<button className="btn" key={index}></button>)
+    })
+
     return (
         <div>
-            <button 
+            {btnList}
+            {/* <button 
                 type="button"
                 className="btn btn-primary"
-                onClick={props.increment}
+                onClick={increment}
                 title="plus"
             >
                 +
@@ -14,7 +24,7 @@ function BtnGroup(props) {
             <button 
                 type="button" 
                 className="btn btn-danger" 
-                onClick={props.decrement} 
+                onClick={decrement} 
                 title="minus"
             >
                 -
@@ -22,10 +32,10 @@ function BtnGroup(props) {
             <button 
                 type="button" 
                 className="btn btn-outline-secondary" 
-                onClick={props.reset}
+                onClick={reset}
             >
                 reset
-            </button>
+            </button> */}
         </div>
     )
 }

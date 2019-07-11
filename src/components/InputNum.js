@@ -1,12 +1,12 @@
 import React from 'react';
 
-function InputNum(props) {
+function InputNum({ number, onChange }) {
     return (
         <input 
             type="text" 
             className="form-control" 
-            value={ props.data } 
-            onChange={ props.onChange } 
+            value={ number } 
+            onChange={ onChange } 
             placeholder="Enter number" 
         />
     )
