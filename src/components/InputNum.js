@@ -1,12 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class InputNum extends Component {
-  render() {
-      const thisProps = this.props;
-      return (
-          <input className="form-control" type="text" value={thisProps.data} onChange={thisProps.onChange} placeholder="Enter number" />
-      )
-  }
+function InputNum(props) {
+    return (
+        <input 
+            type="text" 
+            className="form-control" 
+            value={ props.data } 
+            onChange={ props.onChange } 
+            placeholder="Enter number" 
+        />
+    )
 }
 
 export default InputNum

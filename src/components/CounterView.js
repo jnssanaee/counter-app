@@ -1,12 +1,12 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class CounterView extends Component {
-    render() {
-        const thisProps = this.props;
-        return(
-            <div className="count">{thisProps.data}</div>
-        )
-    }
+function CounterView(props) {
+    return (
+        <div 
+            className="count">
+            { props.data }
+        </div>
+    )
 }
 
 export default CounterView
