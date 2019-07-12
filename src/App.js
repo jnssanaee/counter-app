@@ -39,7 +39,9 @@ class App extends Component {
       <div>
         <CounterView count={count} />
         <InputNum number={number} onChange={this.handleChange} />
-        <BtnGroup increment={this.increment} decrement={this.decrement} reset={this.reset} />
+        <BtnGroup btnCLass="btn btn-primary" title="plus" clickName={this.increment}>+</BtnGroup>
+        <BtnGroup btnCLass="btn btn-danger" title="minus" clickName={this.decrement}>-</BtnGroup>
+        <BtnGroup btnCLass="btn btn-outline-secondary" clickName={this.reset}>reset</BtnGroup>
       </div>
     );
   }
