@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { CounterView, BtnGroup, InputNum } from "./components/index"; // ./components/index => ./components/  (index 생략가능)
+import { CounterView, BtnGroup, InputNum } from "./components"; // ./components/index => ./components/  (index 생략가능)
 import './App.css';
 
 class App extends Component {
