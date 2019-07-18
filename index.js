@@ -49,7 +49,7 @@ const store = Redux.createStore(reducer);
 // render 함수 만들기
 const render = () => {
   const state = store.getState(); // 현재 상태를 가져옵니다.
-  const { counter } = state; // 편의상 비구조화 할당
+  const { counter } = state; // 비구조화 할당
   countArea.innerHTML = counter;
 };
 
@@ -58,16 +58,7 @@ render();
 //  구독
 store.subscribe(render);
 
-// **** 이벤트 달아주기, 액션 발생 시키기
-
-btnIncre.onclick = () => {
-  store.dispatch(increment());
-}
-
-btnDecre.onclick = () => {
-  store.dispatch(decrement());
-}
-
-btnReset.onclick = () => {
-  store.dispatch(reset());
-}
+// 이벤트 달아주기, 액션 발생 시키기
+btnIncre.onclick = () => store.dispatch(increment());
+btnDecre.onclick = () => store.dispatch(decrement())
+btnReset.onclick = () => store.dispatch(reset())
